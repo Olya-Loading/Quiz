@@ -18,17 +18,17 @@ val Typography = Typography(
     bodyLarge = TextStyle(
         fontFamily = fredoka,
         fontWeight = FontWeight.SemiBold,
-        fontSize = 17.sp,
+        fontSize = 40.sp,
     ),
     bodyMedium = TextStyle(
         fontFamily = fredoka,
         fontWeight = FontWeight.Medium,
-        fontSize = 17.sp
+        fontSize = 24.sp
     ),
     bodySmall = TextStyle(
         fontFamily = fredoka,
         fontWeight = FontWeight.Normal,
-        fontSize = 15.sp
+        fontSize = 24.sp
     )
 
 )
