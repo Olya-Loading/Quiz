@@ -84,6 +84,13 @@ fun CardWork(
     }
 
 }
+
+
+@Preview
+@Composable
+private fun CardWorkPreview() {
+    CardWork(Modifier, "Title", "Text", {}, true)
+}
 //@Composable
 //fun CardResolvedWork(
 //    modifier: Modifier = Modifier,
@@ -230,7 +237,7 @@ fun CardNotFound(modifier: Modifier = Modifier) {
 
 @Composable
 fun CardTitle(modifier: Modifier = Modifier, title: String, color: Color) {
-    
+
     Box(
         modifier = modifier
             .background(
@@ -243,7 +250,7 @@ fun CardTitle(modifier: Modifier = Modifier, title: String, color: Color) {
             text = title,
             style = MaterialTheme.typography.titleLarge.copy(fontSize = 24.sp),
             modifier = Modifier
-                .padding(top = 20.dp)
+                //.padding(top = 20.dp)
                 .fillMaxSize(),
             textAlign = TextAlign.Center
         )
@@ -300,7 +307,7 @@ fun ReadBookCard(modifier: Modifier = Modifier, description: String, title: Stri
 
 @Composable
 fun CardWorkQuiz(modifier: Modifier = Modifier, quiz: Quiz, onClick: () -> Unit, count: String) {
-    Box(){
+    Box() {
         CardWork(title = quiz.title, text = quiz.description, onClick = {}, flagSettings = false)
         Box(
             modifier = Modifier
@@ -318,7 +325,7 @@ fun CardWorkQuiz(modifier: Modifier = Modifier, quiz: Quiz, onClick: () -> Unit,
 
 @Composable
 fun CardWorkBook(modifier: Modifier = Modifier, book: Book, onClick: () -> Unit, count: String) {
-    Box(){
+    Box() {
         CardWork(title = book.title, text = book.description, onClick = {}, flagSettings = false)
         Box(
             modifier = Modifier

@@ -84,6 +84,26 @@ fun ButtonAddParagraph(modifier: Modifier = Modifier, onClick: () -> Unit) {
 }
 
 @Composable
+fun ButtonCheck(modifier: Modifier = Modifier, onClick: () -> Unit) {
+    IconButton(
+        onClick = onClick,
+        modifier = modifier
+            .size(71.dp)
+            .clip(shape = CircleShape),
+        colors = IconButtonDefaults.iconButtonColors(MaterialTheme.colorScheme.secondaryContainer)
+    ) {
+        Icon(
+            modifier = Modifier
+                .size(51.dp),
+            painter = painterResource((R.drawable.check_small)),
+            contentDescription = null,
+            tint = Black,
+        )
+    }
+}
+
+
+@Composable
 fun ButtonCreate(modifier: Modifier = Modifier, onClick: () -> Unit, title: String) {
     Button(
         onClick = onClick,
