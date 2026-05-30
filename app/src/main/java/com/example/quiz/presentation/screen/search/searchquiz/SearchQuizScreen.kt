@@ -22,6 +22,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import com.example.quiz.presentation.composables.CardWork
 import com.example.quiz.presentation.composables.SimpleCreateBackground
+import com.example.quiz.presentation.navigation.Destinations
 import com.example.quiz.presentation.screen.search.searchbook.SearchBookViewModel
 
 @Composable
@@ -68,11 +69,17 @@ fun SearchQuizScreen(
 
         //SimpleButton(Modifier, "Искать", { viewModel.onSearchQueryChanged(searchQuery) })
         LazyColumn(
-            modifier = Modifier.padding(top  = 20.dp, bottom = 40.dp).fillMaxSize(),
+            modifier = Modifier
+                .padding(top = 20.dp, bottom = 40.dp)
+                .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             items(searchResults) { quiz ->
-                CardWork(Modifier, quiz.title, quiz.description, {}, true, {})
+                CardWork(Modifier, quiz.title, quiz.description, {
+                    navHostController.navigate(
+                        Destinations.ReadQuiz(quizId = quiz.id.toString())
+                    )
+                }, true, {})
             }
         }
     }

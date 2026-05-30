@@ -19,6 +19,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -63,17 +64,17 @@ fun CardWork(
 
     ) {
         if (flagSettings) {
-            Icon(
-                painter = painterResource(R.drawable.ic_delete),
-                contentDescription = null,
-                modifier = Modifier
-                    .clickable(
-                        onClick = onDelete)
+            IconButton(onClick={onDelete()}, modifier = Modifier .padding(start = 294.dp, top = 15.dp)) {
+                Icon(painter = painterResource(R.drawable.ic_delete),
+                    contentDescription = null,
+                    modifier = Modifier.size(24.dp),
+                    tint = Black
 
-                    .padding(start = 294.dp, top = 15.dp)
-                    .size(24.dp),
-                tint = Black
-            )
+                )
+            }
+
+
+
         }
 
 
@@ -308,7 +309,7 @@ fun CardWorkQuiz(modifier: Modifier = Modifier, quiz: Quiz, onClick: () -> Unit,
             onDelete = {})
         Box(
             modifier = Modifier
-                .padding(top = 24.dp, start = 206.dp)
+                .padding(start = 206.dp)
                 .width(107.dp)
                 .height(58.dp)
         ) {
